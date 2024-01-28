@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #d3f0d0; /* Light Green Background Color */
+            color: #0c512f; /* Dark Green Text Color */
+        }
+
+        .navbar {
+            background-color: #76c7a3 !important; /* Dark Green Navbar */
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-color: #0c512f; /* Dark Green Navbar Toggler Icon */
+        }
+
+        .hero {
+            background-image: url(hero.jpg);
+            height: 500px; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-attachment: fixed;
+            background-size: cover; /* Resize the background image to cover the entire container */
+            color: black;
+            padding: 100px 0;
+            text-align: center;
+            height: 100vh;
+            margin-bottom: 12px;
+        }
+
+        .exchange-section,
+        .objective-section,
+        .shop-section {
+            background-color: #f5f5f5; /* Light Gray Background Color */
+            padding: 80px 0;
+            min-height: 100vh;
+            margin-bottom: 12px;
+        }
+
+        .btn-primary {
+            background-color: #0c512f !important; /* Dark Green Button Color */
+            border-color: #0c512f !important; /* Dark Green Button Border Color */
+        }
+
+        .btn-primary:hover {
+            background-color: #07642c !important; /* Darker Green Button Color on Hover */
+            border-color: #07642c !important; /* Darker Green Button Border Color on Hover */
+        }
+        .shop-section {
+        margin-bottom: 0; /* Remove extra margin at the bottom */
+        }
+
+        .contact-section {
+        padding: 70px 0;
+        text-align: center;
+        }
+
+        .contact-section form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer {
+            background: #0c512f; /* Dark Green Footer Background */
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 0;
+        }
+    </style>
+    <title>Sustain-Tech-Swap</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">Sustain-Tech-Swap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#exchange">Device Exchange</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#benefits">Environmental Benefits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#resources">E-Waste Resources</a>
+                </li>
+                <!-- New Shop Section -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#shop">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+            
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sustain-Tech-Swap</h1>
+            <p>Promoting responsible tech usage through reuse, resale, and e-waste management awareness.</p>
+        </div>
+    </section>
+
+    <!-- Device Exchange Section -->
+    <section id="exchange" class="exchange-section">
+        <div class="container">
+            <h2>Post an Advertisement</h2>
+            <p>Fill out the form below to post an advertisement about your device.</p>
+            <form id="exchangeForm">
+                <div class="form-group">
+                    <label for="deviceName">Device Name:</label>
+                    <input type="text" class="form-control" id="deviceName" placeholder="Enter device name" required>
+                </div>
+                <div class="form-group">
+                    <label for="deviceCondition">Device Condition:</label>
+                    <select class="form-control" id="deviceCondition" required>
+                        <option value="new">New</option>
+                        <option value="used">Used</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deviceDescription">Device Description:</label>
+                    <textarea class="form-control" id="deviceDescription" rows="3"
+                        placeholder="Enter device description" required></textarea>
+                </div>
+                <!-- Removed the image upload section -->
+                <!-- <div class="form-group">
+                    <label for="deviceImage">Device Image:</label>
+                    <input type="file" class="form-control-file" id="deviceImage" accept="image/*" required>
+                    <small id="imageHelp" class="form-text text-muted">Upload an image of your device.</small>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="devicePrice">Device Price:</label>
+                    <input type="number" class="form-control" id="devicePrice" placeholder="Enter device price" required>
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="submitExchangeForm()">Post Advertisement</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Environmental Benefits Section -->
+    <section id="benefits" class="objective-section" style="background-color: #c3e6cb; padding: 60px 0;">
+        <div class="container">
+            <h2 style="color: #155724;">Environmental Benefits</h2>
+            <p style="color: #155724;">
+                Electronic waste poses significant environmental challenges. By promoting the reuse and
+                reselling of electronic devices, Sustain-Tech-Swap contributes to several environmental benefits:
+            </p>
+            <div class="row">
+                <!-- Benefit 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="reduction-icon.png" alt="Reduction Icon" style="width: 250px; height: 250px;">
+                        <h4 class="mt-3">Reduction of E-Waste</h4>
+                        <p>Extending the lifespan of electronic devices reduces the overall volume of electronic waste,
+                            preventing it from ending up in landfills.</p>
+                    </div>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="conservation-icon.png" alt="Conservation Icon" style="width: 250px; height: 250px;">
+                        <h4 class="mt-3">Resource Conservation</h4>
+                        <p>Reusing devices means fewer new devices need to be produced, conserving valuable resources
+                            such as minerals, metals, and energy.</p>
+                    </div>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="energy-saving-icon.png" alt="Energy Saving Icon" style="width: 250px; height: 250px;">
+                        <h4 class="mt-3">Energy Savings</h4>
+                        <p>Manufacturing electronic devices requires a significant amount of energy. By reusing devices, we
+                            help decrease the demand for new production and, in turn, save energy.</p>
+                    </div>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="pollution-mitigation-icon.png" alt="Pollution Mitigation Icon" style="width: 250px; height: 250px;">
+                        <h4 class="mt-3">Mitigating Pollution</h4>
+                        <p>Improper disposal of electronic waste can lead to soil and water pollution. Responsible e-waste
+                            management helps mitigate these environmental hazards.</p>
+                    </div>
+                </div>
+            <p style="color: #155724;">
+                <h5>Join us in creating a sustainable future by making informed choices about your electronic devices.</h5>
+            </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- E-Waste Resources Section -->
+    <section id="resources" class="objective-section" style="background-color: #bee5eb; padding: 60px 0;">
+        <div class="container">
+            <h1 style="color: #0c5460;">E-Waste Resources</h1>
+            <p style="color: #0c5460;">
+                Proper management of electronic waste is crucial for environmental sustainability. Here are resources and
+                suggestions for effective e-waste management:
+            </p>
+            <div class="row">
+                <!-- Resource 1 - Local Recycling Centers -->
+                <div class="col-md-12 mb-2">
+                    <div class="d-flex">
+                        <img src="recycle-icon.png" alt="Recycle Icon" style="width: 200px; height: 80px; margin-right: 30px;">
+                        <div>
+                            <h2>Local Recycling Centers</h2>
+                            <p>Find your nearest e-waste recycling center. Proper recycling ensures that valuable materials are
+                                recovered and harmful substances are disposed of safely.</p>
+                        </div>
+                        <!-- Recycling Locator Link -->
+                            <a href="https://www.recyclenow.com/recycling-locator" target="_blank" class="btn btn-primary" style="width: 160px; height: 80px; margin-right: 30px;">Find
+                                Recycling Center</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="d-flex">
+                        <div>
+                           <h2>E-Waste Awareness Programs</h2>
+                            <p>Participate in or support programs that raise awareness about the environmental impact of
+                                e-waste and promote responsible disposal practices.</p>
+                                <div class="row">
+                                   <div class="col">
+                                    <img src="Awareness.png" alt="Awareness Icon" style="width: 550px; height: 200px; margin-right: 30px;">
+                                   </div>
+                                   <div class="col">
+                                       <h5>Join the Fight Against E-Waste: Get Involved in Awareness Programs!</h5>
+                                        <p>Electronic waste, or e-waste, is a growing global problem with significant environmental and health consequences. From discarded phones and laptops to broken TVs and appliances, e-waste pollutes landfills, leaches harmful toxins into the environment, and threatens the health of communities. But there's hope! By participating in or supporting e-waste awareness programs, you can make a real difference.</p>
+                                   </div>
+                                </div>
+                                
+                                <h3>Here are some ways to get involved:</h3>
+
+                                <ul>
+                                <li><strong>Volunteer at local e-waste collection drives:</strong> These drives provide convenient and responsible ways for people to dispose of their unwanted electronics. By volunteering, you can help sort, collect, and transport e-waste to proper recycling facilities.</li>
+                                <li><strong>Attend educational workshops and events:</strong> Many organizations host workshops and events that educate people about the dangers of e-waste and the importance of responsible disposal.</li>
+                                <li><strong>Advocate for stronger e-waste policies:</strong> Contact your local representatives and urge them to support policies that promote responsible e-waste management.</li>
+                                <li><strong>Get creative and spread awareness:</strong> Organize a neighborhood e-swap, launch a social media campaign, or partner with local businesses to raise awareness.</li>
+                                <li><strong>Support organizations working on e-waste solutions:</strong> Donate your time or resources to organizations like the Electronics TakeBack Coalition, the EPA, and Basel Action Network.</li>
+                                </ul>
+
+                                <p><strong>Bonus Tip:</strong> Check out these resources for more information and inspiration:</p>
+
+                                <ul>
+                                <li><a href="https://www.epa.gov/international-cooperation/cleaning-electronic-waste-e-waste">EPA e-waste website</a></li>
+                                <li><a href="https://www.ban.org/e-waste">Basel Action Network</a></li>
+                                </ul>
+
+                                <p>Remember, every action counts! Let's work together to create a more sustainable future for all.</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="d-flex">
+                        <img src="Disposal.png" alt="Disposal Icon" style="width: 250px; height: 150px; margin-right: 30px;">
+                        <div>
+                           <h2>Handbook of Electronic Waste Management</h2>
+                            <p>
+                                Description: The "Handbook of Electronic Waste Management: International Best Practices and Case Studies" provides a concise overview of the environmental challenges linked to international e-waste handling. Authors present detailed e-waste management methods with real-world examples, followed by global, national, and subnational data illustrating e-waste flows. The resource offers a comprehensive presentation of e-waste estimation methods, addressing both management approaches and their environmental impacts.
+                            </p>
+                        </div>
+                        <!-- Recycling Locator Link -->
+                            <a href="https://wasteaid.org/wp-content/uploads/2022/06/Handbook-of-E-waste-management.pdf" target="_blank" class="btn btn-primary" style="width: 250px; height: 75px; margin: 30px;">Download Book</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="d-flex">
+                        <div>
+                           <h2>E-Waste Legislation</h2>
+                            <p>Stay informed about e-waste management laws and regulations in your region. Compliance with
+                                legislation is essential for responsible disposal.</p>
+                                <h4>Conquer the E-Waste Jungle: Know Your Local Legislation</h4>
+
+                                <p>The ever-growing tide of e-waste poses a complex environmental challenge, but responsible disposal is within your reach. Navigating the intricate web of local e-waste laws empowers you to become a champion for a cleaner planet. Let's chart your course through the e-waste jungle!</p>
+
+                                <h3>Chart Your Course:</h3>
+
+                                Local Knowledge is Power: Explore your regional environmental agency's website for comprehensive information on e-waste management regulations, approved disposal channels, and prohibited practices.
+                                Seek Expert Guidance: Don't hesitate to contact your local agency directly. They're happy to answer your questions and clarify any doubts.
+                                Tap into the Network: Utilize valuable resources like the Basel Action Network and the Electronics TakeBack Coalition . These organizations offer up-to-date information and guidance on navigating e-waste legislation across different regions.
+                                <h3>Avoid the Dead Ends:</h3>
+
+                                Compliance is Key: Ignoring regulations isn't just environmentally irresponsible, it could also land you in legal trouble. Familiarize yourself with your local laws and stick to them for a smooth waste disposal journey.
+                                Know Your Options: Research authorized collection centers and responsible recycling facilities in your area. Avoid fly-by-night operators and illegal dumping, which can pollute the environment and potentially harm communities.
+                                Spread the Word: Educate your friends and family about local e-waste regulations. By sharing your knowledge, you empower others to become responsible recyclers and contribute to a more sustainable future.
+                                <p>Remember, every informed decision and shared piece of knowledge paves the way for a greener tomorrow. Let's navigate the e-waste labyrinth together, one responsible step at a time!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="color: #0c5460;">
+                By utilizing these resources, you can play an active role in promoting sustainable e-waste management
+                practices.
+            </p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2>Shop</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="product1.jpg" style="height: 300px;" class="card-img-top" alt="Product 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Smartphone X</h5>
+                            <p class="card-text">High-quality smartphone for your tech needs.</p>
+                            <p class="card-text">$499.99</p>
+                            <!-- Button to initiate device exchange -->
+                            <button class="btn btn-primary">Exchange Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="product2.jpg" style="height: 300px;" class="card-img-top" alt="Product 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Pro</h5>
+                            <p class="card-text">Powerful laptop for work and entertainment.</p>
+                            <p class="card-text">$999.99</p>
+                            <!-- Button to initiate device exchange -->
+                            <button class="btn btn-primary">Exchange Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more product cards as needed -->
+                <!-- Product 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="product3.jpg" class="card-img-top" alt="Product 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Tablet Lite</h5>
+                            <p class="card-text">Compact tablet for on-the-go use.</p>
+                            <p class="card-text">$299.99</p>
+                            <button class="btn btn-primary">Exchange Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="deviceList">
+            <!-- Devices will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have a question? Send us a message:</p>
+            <form id="inquiryForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Type your message here" required></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="submitInquiryForm()">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Sustain-Tech-Swap. All rights reserved.<br>
+            For more info: contact@sustain-tech-swap.com</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <!-- Add your custom JavaScript file -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add smooth scrolling to all links
+            var links = document.querySelectorAll('a[href*="#"]');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function (event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        document.querySelector(hash).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+            // Call the function to retrieve and display devices on page load
+        retrieveAndDisplayDevices();
+        });
+
+        function submitExchangeForm() {
+            var deviceName = document.getElementById('deviceName').value;
+            var deviceCondition = document.getElementById('deviceCondition').value;
+            var deviceDescription = document.getElementById('deviceDescription').value;
+            var devicePrice = document.getElementById('devicePrice').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'process_form.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                    alert('Device data submitted successfully.');
+                    retrieveAndDisplayDevices();
+                }
+            };
+            var data = 'action=exchange' +
+                '&deviceName=' + encodeURIComponent(deviceName) +
+                '&deviceCondition=' + encodeURIComponent(deviceCondition) +
+                '&deviceDescription=' + encodeURIComponent(deviceDescription) +
+                '&devicePrice=' + encodeURIComponent(devicePrice);
+            xhr.send(data);
+
+            // Optionally, you can clear the form after submission
+            document.getElementById('exchangeForm').reset();
+        }
+
+        function retrieveAndDisplayDevices() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'process_form.php', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                    document.getElementById('deviceList').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
